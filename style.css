@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #0d0d0d; /* daha koyu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* 🌸 Sakura / ışık parçacıkları */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(circle, rgba(255,182,193,0.3) 2px, transparent 2px);
+    background-size: 50px 50px;
+    animation: moveBg 20s linear infinite;
+    z-index: 0;
+}
+
+/* Hareket animasyonu */
+@keyframes moveBg {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-100px, -100px);
+    }
+}
+
+/* 🌸 Yüzen şekiller */
+.shape {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: #ff8fb1;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: float 10s infinite ease-in-out;
+    z-index: 0;
+}
+
+.shape:nth-child(1) { top: 10%; left: 20%; animation-duration: 8s; }
+.shape:nth-child(2) { top: 70%; left: 80%; animation-duration: 12s; }
+.shape:nth-child(3) { top: 50%; left: 10%; animation-duration: 10s; }
+.shape:nth-child(4) { top: 30%; left: 60%; animation-duration: 14s; }
+
+/* Yukarı aşağı hareket */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+/* Kart stilleri (daha yumuşak ton) */
+.container {
+    position: relative;
+    background: rgba(255, 182, 193, 0.2); /* soft pastel pembe + hafif transparan */
+    padding: 40px;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 1;
+    color: #222; /* koyu yazı rengi */
+    backdrop-filter: blur(8px); /* arka planı hafif bulanık yap */
+}
+
+/* Liste elemanları */
+ul li {
+    background: rgba(255, 182, 193, 0.4); /* daha soft, göz yormayan pembe */
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 10px;
+    color: #222;
+    font-weight: 500;
+}
+
+/* Başlık */
+h1 {
+    text-align: center;
+    color: #c7a233;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Menü linkleri */
+nav a {
+    display: block;
+    margin: 10px 0;
+    padding: 12px;
+    background: #ff8fb1; /* biraz daha canlı pembe */
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #ff4d88;
+    transform: scale(1.05);
+}
+
+/* Geri butonu */
+.back {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #c7a233;
+    text-decoration: none;
+    font-weight: bold;
+}
+img {
+    width: 100px;       /* boyut ayarla */
+    height: auto;
+    border-radius: 15px; /* köşeleri yuvarla */
+    cursor: pointer;     /* üzerine gelince el işareti */
+    transition: 0.3s;
+}
+
+img:hover {
+    transform: scale(1.1); /* hover efekti */
+    box-shadow: 0 0 20px rgba(255,105,180,0.5);
+}
